@@ -6,7 +6,6 @@ setwd("your work path")
 # data preparing
 data_original<-read.csv(file = "your files saved original data",sep = ",")
 
-
 #-------------------------------------------------fit van Genuchten model arguements-------------------------------------------#
 system.time(fit1 <- fit_wrc_hcc(wrc_formula = theta_t ~ h_t|id,
                                 data = data_original,
@@ -23,7 +22,6 @@ system.time(fit1 <- fit_wrc_hcc(wrc_formula = theta_t ~ h_t|id,
 )
 para_fit1 <- coef(fit1,gof = TRUE)
 write.csv(para_fit1, file="vgfit_para.csv")
-
 
 #----------------------------------------------predict FC & PWP & calculate wrc fit r2------------------------------------------#
 predict_all<- data.frame()
